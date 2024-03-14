@@ -1,18 +1,18 @@
-document.addEventListener("DOMContentLoaded", function() {
-  if (window.innerWidth < 1200) {
+document.addEventListener("DOMContentLoaded", function () {
+  if (window.innerWidth < 1300) {
     document.getElementById("desktop").style.display = "none";
 
     const mobile = document.createElement("div");
-    mobile.classList.add("d-block", "text-center", "py-3");
-    mobile.innerHTML = `<p class="mt-5">👋 Sorry, This plugin is only available for Desktop.</p>`;
+    mobile.classList.add("start-50", "top-50", "trasform50", "position-fixed");
+    mobile.innerHTML = `<div class="d-block text-center">
+      <p>Sorry, This site is only available on Desktop.</p>
+    </div>`;
     document.body.appendChild(mobile);
   } else {
     mobile.remove();
     document.getElementById("desktop").style.display = "block";
   }
 });
-
-
 
 // Tab Functionality
 document.addEventListener("DOMContentLoaded", function () {
@@ -46,25 +46,20 @@ setTimeout(() => {
   main.style.display = "block";
 }, 1500);
 
-
-
 // Get the navigation bar element
-const navbar = document.getElementById('navBar');
+const navbar = document.getElementById("navBar");
 
 // Function to toggle navbar visibility based on scroll position
 function toggleNavbarVisibility() {
   if (window.scrollY > 450) {
-    navbar.style.top = '3%'; // Show navbar
+    navbar.style.top = "3%"; // Show navbar
   } else {
-    navbar.style.top = '-10%'; // Hide navbar
+    navbar.style.top = "-10%"; // Hide navbar
   }
 }
 
 // Add scroll event listener to window
-window.addEventListener('scroll', toggleNavbarVisibility);
-
-
-
+window.addEventListener("scroll", toggleNavbarVisibility);
 
 // JS for Choosen Color
 document
@@ -516,13 +511,7 @@ function createPart(
     headingDiv.classList.add("navbar", "bg-transparent", "px-3", "py-2");
 
     const heading = document.createElement("h6");
-    heading.classList.add(
-      "navbar-brand",
-      "fs-6",
-      "cs-text",
-      "fw-bold",
-      "mb-0"
-    );
+    heading.classList.add("navbar-brand", "fs-6", "cs-text", "fw-bold", "mb-0");
     heading.textContent = sectionName;
     headingDiv.appendChild(heading);
 
@@ -914,7 +903,13 @@ function shuffle(array) {
 
 function popupMessage(message) {
   const popupMessage = document.createElement("div");
-  popupMessage.classList.add("popupMessage", "px-4", "py-3", "border", "rounded-4");
+  popupMessage.classList.add(
+    "popupMessage",
+    "px-4",
+    "py-3",
+    "border",
+    "rounded-4"
+  );
 
   if (message === "") {
     popupMessage.textContent = "For this, You have to use Figma Plugin.";

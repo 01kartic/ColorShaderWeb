@@ -494,3 +494,7 @@ a {
   backdrop-filter: blur(256px);
   z-index: 1001;
 }
+
+.trasform50 {
+  transform: translate(-50%, -50%);
+}
