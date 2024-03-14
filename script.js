@@ -1,3 +1,19 @@
+document.addEventListener("DOMContentLoaded", function() {
+  if (window.innerWidth < 1200) {
+    document.getElementById("desktop").style.display = "none";
+
+    const mobile = document.createElement("div");
+    mobile.classList.add("d-block", "text-center", "py-3");
+    mobile.innerHTML = `<p class="mt-5">👋 Sorry, This plugin is only available for Desktop.</p>`;
+    document.body.appendChild(mobile);
+  } else {
+    mobile.remove();
+    document.getElementById("desktop").style.display = "block";
+  }
+});
+
+
+
 // Tab Functionality
 document.addEventListener("DOMContentLoaded", function () {
   var tabLinks = document.querySelectorAll(".nav-link");
@@ -29,6 +45,26 @@ setTimeout(() => {
   loading.style.display = "none";
   main.style.display = "block";
 }, 1500);
+
+
+
+// Get the navigation bar element
+const navbar = document.getElementById('navBar');
+
+// Function to toggle navbar visibility based on scroll position
+function toggleNavbarVisibility() {
+  if (window.scrollY > 450) {
+    navbar.style.top = '3%'; // Show navbar
+  } else {
+    navbar.style.top = '-10%'; // Hide navbar
+  }
+}
+
+// Add scroll event listener to window
+window.addEventListener('scroll', toggleNavbarVisibility);
+
+
+
 
 // JS for Choosen Color
 document

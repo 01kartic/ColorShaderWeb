@@ -27,249 +27,379 @@
 </head>
 
 <body>
-  <div class="h-100">
-    <img src="./Gradient.svg" alt="Back Gradient" class="backGradient">
-    <div class="d-grid" style="grid-template-columns: 2fr 3fr;">
-      <div class="vh-100 position-relative">
-        <div class="figmaPlugin w-50">
-        <img src="https://01kartic.github.io/Assets/Images/ColorShader.png" alt="Logo" width="64" class="d-inline-block align-text-top ms-2 my-3">
-          <h1 class="fw-bold fs-8">Color Shader</h1>
-          <p class="fs-6">
-            Elevate your design process and speed with Color Shader, a Figma Plugin. Generate vibrant color shades effortlessly.
-          </p>
-          <a href="https://figma.com/community/plugin/1309939872279901716" class="btn btn-primary btn-lg" target="_blank">Figma Plugin</a>
-        </div>
+  <div id="desktop">
+    <nav class="navbar w-50 border px-4 rounded-4" id="navBar">
+      <a class="navbar-brand fw-bold">
+        <img src="https://01kartic.github.io/Assets/Images/ColorShader.png" width="30" alt="Bootstrap" class="me-2">
+      </a>
+      <div class="navbar-text">
+        <a href="https://figma.com/community/plugin/1309939872279901716"
+          class="btn btn-primary cs-text border rounded-3" target="_blank">Figma Plugin</a>
       </div>
-      <div class="vh-100 position-relative">
-        <div class="figmaPlugin">
-          <div class="Main cs-bg cs-text rounded-top-4">
-            <div class="Main" id="loading">
-              <div class="d-flex justify-content-center align-items-center w-100 h-100">
-                <div class="text-center">
-                  <div class="spinner-grow" role="status">
-                    <span class="visually-hidden">Loading...</span>
+    </nav>
+
+    <div class="vh-100">
+      <img src="./Gradient.svg" alt="Back Gradient" class="backGradient">
+      <div id="topHeroPlugin">
+        <div class="d-grid" style="grid-template-columns: 2fr 3fr;">
+          <div class="vh-100 position-relative">
+            <div class="figmaPlugin w-50">
+              <img src="https://01kartic.github.io/Assets/Images/ColorShader.png" alt="Logo" width="64"
+                class="d-inline-block align-text-top ms-2 my-3">
+              <h1 class="fw-bold fs-8">Color Shader</h1>
+              <p class="fs-6">
+                Elevate your design process and speed with Color Shader, a Figma Plugin. Generate vibrant color shades
+                effortlessly.
+              </p>
+              <a href="https://figma.com/community/plugin/1309939872279901716" class="btn btn-primary btn-lg"
+                target="_blank">Figma Plugin</a>
+            </div>
+          </div>
+          <div class="vh-100 position-relative">
+            <div class="figmaPlugin">
+              <div class="Main cs-bg cs-text rounded-top-4">
+                <div class="Main" id="loading">
+                  <div class="d-flex justify-content-center align-items-center w-100 h-100">
+                    <div class="text-center">
+                      <div class="spinner-grow" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
 
-            <div class="Main" id="main">
-              <!-- UI Body -->
-              <ul class="nav nav-underline px-3 pt-2" id="options">
-                <li class="nav-item">
-                  <a class="nav-link active" data-toggle="tab" href="#chooseColor">Choose Color</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" data-toggle="tab" href="#usingHex" id="galleryToHex">Using Hex</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" data-toggle="tab" href="#colorGallery">Color Gallery</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" data-toggle="tab" href="#colorPalettes">Color Palettes</a>
-                </li>
-              </ul>
+                <div class="Main" id="main">
+                  <!-- UI Body -->
+                  <ul class="nav nav-underline px-3 pt-2" id="options">
+                    <li class="nav-item">
+                      <a class="nav-link active" data-toggle="tab" href="#chooseColor">Choose Color</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" data-toggle="tab" href="#usingHex" id="galleryToHex">Using Hex</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" data-toggle="tab" href="#colorGallery">Color Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" data-toggle="tab" href="#colorPalettes">Color Palettes</a>
+                    </li>
+                  </ul>
 
-              <div class="tab-content">
-                <div class="tab-pane fade show active" id="chooseColor">
-                  <!-- Choose Color -->
-                  <div class="d-grid" style="grid-template-columns: 2fr 1fr">
-                    <div class="border-end">
-                      <!-- Hue Slider -->
-                      <div id="hue-slider-container">
-                        <input type="range" class="custom-range w-100 outline-none" id="hue-slider" max="100"
-                          step="0.05" />
-                        <div id="selected-hue"></div>
-                      </div>
-                      <!-- Selected Color Container -->
-                      <div id="selected-color-container" class="d-flex align-items-center border-top border-bottom">
-                        <div id="selected-color-preview" class="selected-color-preview border-end"></div>
-                        <input id="selected-color-code"
-                          class="form-control form-control-lg px-3 py-2 w-100 rounded-0 border-0" value="#000000"
-                          placeholder="Your color Hex Code" readonly />
-                      </div>
+                  <div class="tab-content">
+                    <div class="tab-pane fade show active" id="chooseColor">
+                      <!-- Choose Color -->
+                      <div class="d-grid" style="grid-template-columns: 2fr 1fr">
+                        <div class="border-end">
+                          <!-- Hue Slider -->
+                          <div id="hue-slider-container">
+                            <input type="range" class="custom-range w-100 outline-none" id="hue-slider" max="100"
+                              step="0.05" />
+                            <div id="selected-hue"></div>
+                          </div>
+                          <!-- Selected Color Container -->
+                          <div id="selected-color-container" class="d-flex align-items-center border-top border-bottom">
+                            <div id="selected-color-preview" class="selected-color-preview border-end"></div>
+                            <input id="selected-color-code"
+                              class="form-control form-control-lg px-3 py-2 w-100 rounded-0 border-0" value="#000000"
+                              placeholder="Your color Hex Code" readonly />
+                          </div>
 
-                      <div class="px-3 py-3 border-bottom">
-                        <h3 class="fw-bold mb-1">Shades</h3>
-                        <p class="mb-0">
-                          Click on the shade to <span class="fw-medium">see details</span>.
-                        </p>
-                      </div>
-                      <div id="color-shades">
-                        <div class="w-100 h-100 d-flex align-items-center justify-content-center">
-                          <div class="d-block w-75 text-center">
-                            <h6 class="fw-normal mb-4">
-                              <strong>Contribute</strong> Colors/Palettes or
-                              <strong>Want Help</strong> !!
-                            </h6>
-                            <a href=""
-                              class="text-light w-33 px-3 py-2 rounded-3 m-auto border">Click Here</a>
+                          <div class="px-3 py-3 border-bottom">
+                            <h3 class="fw-bold mb-1">Shades</h3>
+                            <p class="mb-0">
+                              Click on the shade to <span class="fw-medium">see details</span>.
+                            </p>
+                          </div>
+                          <div id="color-shades">
+                            <div class="w-100 h-100 d-flex align-items-center justify-content-center">
+                              <div class="d-block w-75 text-center">
+                                <h6 class="fw-normal mb-4">
+                                  <strong>Contribute</strong> Colors/Palettes or
+                                  <strong>Want Help</strong> !!
+                                </h6>
+                                <a href="" class="text-light w-33 px-3 py-2 rounded-3 m-auto border">Click Here</a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="h-100">
+                          <h4 class="fw-bold px-3 pt-3 pb-2">Color Panel</h4>
+                          <div id="color" class="color w-100 border-top border-bottom"></div>
+                          <div class="input-group">
+                            <input id="hexCode" class="form-control form-control-lg rounded-0 border-0" value="#000000"
+                              readonly />
+                            <butoon id="hexCodeCopy"
+                              class="btn btn-primary input-group-text px-3 rounded-0 border-start"
+                              title="Copy Hex Code"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://w3.org/2000/svg">
+                                <rect x="9.00005" y="4.40001" width="8.6" height="12.6" rx="1.3" stroke="white"
+                                  stroke-width="1.4" />
+                                <path
+                                  d="M6.30005 7.70001V9.4143V12.8429V17.7C6.30005 18.8046 7.19548 19.7 8.30005 19.7H11.1H14.3"
+                                  stroke="white" stroke-width="1.4" stroke-linecap="round" />
+                              </svg></butoon>
+                          </div>
+                          <div class="d-grid">
+                            <button onclick="addToCanvas()" class="btn btn-primary rounded-0 border-top border-bottom">
+                              Add to Canvas
+                            </button>
+                          </div>
+                          <div class="input-group border-bottom">
+                            <input id="makeStyleChoosenName" class="form-control form-control-lg rounded-0 border-0"
+                              placeholder="Style Name" required />
+                            <button onclick="makeStyleChoosen()"
+                              class="btn btn-primary input-group-text px-3 rounded-0 border-start"
+                              title="Create Style"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://w3.org/2000/svg">
+                                <path
+                                  d="M12.6 4.27017L18.3942 7.61547C18.7655 7.82983 18.9942 8.22598 18.9942 8.6547V15.3453C18.9942 15.774 18.7655 16.1702 18.3942 16.3845L12.6 19.7298C12.2287 19.9442 11.7713 19.9442 11.4 19.7298L5.60577 16.3845C5.23449 16.1702 5.00577 15.774 5.00577 15.3453V8.6547C5.00577 8.22598 5.23449 7.82983 5.60577 7.61547L11.4 4.27017C11.7713 4.05581 12.2287 4.05581 12.6 4.27017Z"
+                                  stroke="white" stroke-width="1.6" />
+                                <circle cx="12" cy="12" r="2" fill="white" />
+                              </svg>
+                            </button>
+                          </div>
+                          <div class="card p-3 m-3 bg-transparent cs-text border-dashed text-center rounded-4">
+                            <a href="https://figma.com/community/plugin/1331204712224058956"
+                              class="btn btn-primary rounded-3 px-4 py-2 m-auto my-2" target="_blank">Perfect Size</a>
+                            <h6 class="mt-2 fw-medium">👋 Try this one also</h6>
                           </div>
                         </div>
                       </div>
                     </div>
-                    <div class="h-100">
-                      <h4 class="fw-bold px-3 pt-3 pb-2">Color Panel</h4>
-                      <div id="color" class="color w-100 border-top border-bottom"></div>
-                      <div class="input-group">
-                        <input id="hexCode" class="form-control form-control-lg rounded-0 border-0" value="#000000"
-                          readonly />
-                        <butoon id="hexCodeCopy" class="btn btn-primary input-group-text px-3 rounded-0 border-start"
-                          title="Copy Hex Code"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                            xmlns="http://w3.org/2000/svg">
-                            <rect x="9.00005" y="4.40001" width="8.6" height="12.6" rx="1.3" stroke="white"
-                              stroke-width="1.4" />
-                            <path
-                              d="M6.30005 7.70001V9.4143V12.8429V17.7C6.30005 18.8046 7.19548 19.7 8.30005 19.7H11.1H14.3"
-                              stroke="white" stroke-width="1.4" stroke-linecap="round" />
-                          </svg></butoon>
-                      </div>
-                      <div class="d-grid">
-                        <button onclick="addToCanvas()" class="btn btn-primary rounded-0 border-top border-bottom">
-                          Add to Canvas
-                        </button>
-                      </div>
-                      <div class="input-group border-bottom">
-                        <input id="makeStyleChoosenName" class="form-control form-control-lg rounded-0 border-0"
-                          placeholder="Style Name" required />
-                        <button onclick="makeStyleChoosen()"
-                          class="btn btn-primary input-group-text px-3 rounded-0 border-start" title="Create Style"><svg
-                            width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://w3.org/2000/svg">
-                            <path
-                              d="M12.6 4.27017L18.3942 7.61547C18.7655 7.82983 18.9942 8.22598 18.9942 8.6547V15.3453C18.9942 15.774 18.7655 16.1702 18.3942 16.3845L12.6 19.7298C12.2287 19.9442 11.7713 19.9442 11.4 19.7298L5.60577 16.3845C5.23449 16.1702 5.00577 15.774 5.00577 15.3453V8.6547C5.00577 8.22598 5.23449 7.82983 5.60577 7.61547L11.4 4.27017C11.7713 4.05581 12.2287 4.05581 12.6 4.27017Z"
-                              stroke="white" stroke-width="1.6" />
-                            <circle cx="12" cy="12" r="2" fill="white" />
-                          </svg>
-                        </button>
-                      </div>
-                      <div class="card p-3 m-3 bg-transparent cs-text border-dashed text-center rounded-4">
-                        <a href="https://figma.com/community/plugin/1331204712224058956"
-                          class="btn btn-primary rounded-3 px-4 py-2 m-auto my-2" target="_blank">Perfect Size</a>
-                        <h6 class="mt-2 fw-medium">👋 Try this one also</h6>
-                      </div>
-                    </div>
-                  </div>
-                </div>
 
 
 
 
-                <div class="tab-pane fade" id="usingHex">
-                  <!-- Using Hex -->
-                  <div class="d-grid" style="grid-template-columns: 2fr 1fr">
-                    <div class="border-end">
-                      <!-- Selected Color Container -->
-                      <div id="selected-color-container2" class="d-flex align-items-center border-bottom">
-                        <div id="selected-color-preview2" class="selected-color-preview border-end"></div>
-                        <input id="selected-color-code2"
-                          class="form-control form-control-lg px-3 py-2 w-100 rounded-0 border-0 UpperCase"
-                          value="#000000" placeholder="Hex Code" />
-                        <div onclick="refresh()" class="btn btn-none input-group-text px-2 py-2 me-2 rounded-3">
-                          Refresh
+                    <div class="tab-pane fade" id="usingHex">
+                      <!-- Using Hex -->
+                      <div class="d-grid" style="grid-template-columns: 2fr 1fr">
+                        <div class="border-end">
+                          <!-- Selected Color Container -->
+                          <div id="selected-color-container2" class="d-flex align-items-center border-bottom">
+                            <div id="selected-color-preview2" class="selected-color-preview border-end"></div>
+                            <input id="selected-color-code2"
+                              class="form-control form-control-lg px-3 py-2 w-100 rounded-0 border-0 UpperCase"
+                              value="#000000" placeholder="Hex Code" />
+                            <div onclick="refresh()" class="btn btn-none input-group-text px-2 py-2 me-2 rounded-3">
+                              Refresh
+                            </div>
+                          </div>
+
+                          <div class="px-3 py-3 border-bottom">
+                            <h3 class="fw-bold mb-1">Shades</h3>
+                            <p class="mb-0">
+                              Click on the shade to <span class="fw-medium">see details</span>.
+                            </p>
+                          </div>
+                          <div id="color-shades2"></div>
+                        </div>
+                        <div class="h-100">
+                          <h4 class="fw-bold px-3 pt-3 pb-2">Color Panel</h4>
+                          <div id="color2" class="color w-100 border-top border-bottom"></div>
+                          <div class="input-group">
+                            <input id="hexCode2" class="form-control form-control-lg rounded-0 border-0" value="#000000"
+                              readonly />
+                            <button id="hexCodeCopy2"
+                              class="btn btn-primary input-group-text px-3 rounded-0 border-start"
+                              title="Copy Hex Code"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://w3.org/2000/svg">
+                                <rect x="9.00005" y="4.40001" width="8.6" height="12.6" rx="1.3" stroke="white"
+                                  stroke-width="1.4" />
+                                <path
+                                  d="M6.30005 7.70001V9.4143V12.8429V17.7C6.30005 18.8046 7.19548 19.7 8.30005 19.7H11.1H14.3"
+                                  stroke="white" stroke-width="1.4" stroke-linecap="round" />
+                              </svg></button>
+                          </div>
+                          <div class="d-grid">
+                            <button onclick="addToCanvas2()" class="btn btn-primary rounded-0 border-top border-bottom">
+                              Add to Canvas
+                            </button>
+                          </div>
+                          <div class="input-group border-bottom">
+                            <input id="makeStyleChoosenName2" class="form-control form-control-lg rounded-0 border-0"
+                              placeholder="Style Name" required />
+                            <button onclick="makeStyleChoosen2()"
+                              class="btn btn-primary input-group-text px-3 rounded-0 border-start"
+                              title="Create Style"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://w3.org/2000/svg">
+                                <path
+                                  d="M12.6 4.27017L18.3942 7.61547C18.7655 7.82983 18.9942 8.22598 18.9942 8.6547V15.3453C18.9942 15.774 18.7655 16.1702 18.3942 16.3845L12.6 19.7298C12.2287 19.9442 11.7713 19.9442 11.4 19.7298L5.60577 16.3845C5.23449 16.1702 5.00577 15.774 5.00577 15.3453V8.6547C5.00577 8.22598 5.23449 7.82983 5.60577 7.61547L11.4 4.27017C11.7713 4.05581 12.2287 4.05581 12.6 4.27017Z"
+                                  stroke="white" stroke-width="1.6" />
+                                <circle cx="12" cy="12" r="2" fill="white" />
+                              </svg>
+                            </button>
+                          </div>
+                          <div class="card p-3 m-3 bg-transparent cs-text border-dashed text-center rounded-4">
+                            <a href="https://figma.com/community/plugin/1331204712224058956"
+                              class="btn btn-primary rounded-3 px-4 py-2 m-auto my-2" target="_blank">Perfect Size</a>
+                            <h6 class="mt-2 fw-medium">👋 Try this one also</h6>
+                          </div>
                         </div>
                       </div>
-
-                      <div class="px-3 py-3 border-bottom">
-                        <h3 class="fw-bold mb-1">Shades</h3>
-                        <p class="mb-0">
-                          Click on the shade to <span class="fw-medium">see details</span>.
-                        </p>
-                      </div>
-                      <div id="color-shades2"></div>
                     </div>
-                    <div class="h-100">
-                      <h4 class="fw-bold px-3 pt-3 pb-2">Color Panel</h4>
-                      <div id="color2" class="color w-100 border-top border-bottom"></div>
-                      <div class="input-group">
-                        <input id="hexCode2" class="form-control form-control-lg rounded-0 border-0" value="#000000"
-                          readonly />
-                        <button id="hexCodeCopy2" class="btn btn-primary input-group-text px-3 rounded-0 border-start"
-                          title="Copy Hex Code"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                            xmlns="http://w3.org/2000/svg">
-                            <rect x="9.00005" y="4.40001" width="8.6" height="12.6" rx="1.3" stroke="white"
-                              stroke-width="1.4" />
-                            <path
-                              d="M6.30005 7.70001V9.4143V12.8429V17.7C6.30005 18.8046 7.19548 19.7 8.30005 19.7H11.1H14.3"
-                              stroke="white" stroke-width="1.4" stroke-linecap="round" />
-                          </svg></button>
-                      </div>
-                      <div class="d-grid">
-                        <button onclick="addToCanvas2()" class="btn btn-primary rounded-0 border-top border-bottom">
-                          Add to Canvas
-                        </button>
-                      </div>
+
+
+
+
+                    <div class="tab-pane fade Main" id="colorGallery">
+                      <!-- Color Gallery -->
                       <div class="input-group border-bottom">
-                        <input id="makeStyleChoosenName2" class="form-control form-control-lg rounded-0 border-0"
-                          placeholder="Style Name" required />
-                        <button onclick="makeStyleChoosen2()"
-                          class="btn btn-primary input-group-text px-3 rounded-0 border-start" title="Create Style"><svg
-                            width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://w3.org/2000/svg">
+                        <div class="w-25 border-end">
+                          <select class="form-select border-0 my-2" id="searchBy">
+                            <option value="section"> Section</option>
+                            <option value="color" selected>Color</option>
+                            <option value="author">Author</option>
+                          </select>
+                        </div>
+                        <span class="input-group-text cs-text bg-transparent ms-2 my-2 pe-1 rounded-0 border-0">
+                          <svg xmlns="http://w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-search" viewBox="0 0 16 16">
                             <path
-                              d="M12.6 4.27017L18.3942 7.61547C18.7655 7.82983 18.9942 8.22598 18.9942 8.6547V15.3453C18.9942 15.774 18.7655 16.1702 18.3942 16.3845L12.6 19.7298C12.2287 19.9442 11.7713 19.9442 11.4 19.7298L5.60577 16.3845C5.23449 16.1702 5.00577 15.774 5.00577 15.3453V8.6547C5.00577 8.22598 5.23449 7.82983 5.60577 7.61547L11.4 4.27017C11.7713 4.05581 12.2287 4.05581 12.6 4.27017Z"
-                              stroke="white" stroke-width="1.6" />
-                            <circle cx="12" cy="12" r="2" fill="white" />
+                              d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
                           </svg>
-                        </button>
+                        </span>
+                        <input id="search" type="search" class="form-control cs-text rounded-0 border-0 my-2"
+                          placeholder="Search Colors" value="" />
+                        <span class="input-group-text d-none bg-transparent me-2 my-2 rounded-0 border-0"
+                          id="clearSearch">
+                          Clear
+                        </span>
                       </div>
-                      <div class="card p-3 m-3 bg-transparent cs-text border-dashed text-center rounded-4">
-                        <a href="https://figma.com/community/plugin/1331204712224058956"
-                          class="btn btn-primary rounded-3 px-4 py-2 m-auto my-2" target="_blank">Perfect Size</a>
-                        <h6 class="mt-2 fw-medium">👋 Try this one also</h6>
+                      <div id="gallery"></div>
+                    </div>
+
+
+
+                    <div class="tab-pane fade Main" id="colorPalettes">
+                      <!-- Color Palettes -->
+                      <div class="w-100" id="palettes">
                       </div>
                     </div>
                   </div>
                 </div>
 
-
-
-
-                <div class="tab-pane fade Main" id="colorGallery">
-                  <!-- Color Gallery -->
-                  <div class="input-group border-bottom">
-                    <div class="w-25 border-end">
-                      <select class="form-select border-0 my-2" id="searchBy">
-                        <option value="section"> Section</option>
-                        <option value="color" selected>Color</option>
-                        <option value="author">Author</option>
-                      </select>
-                    </div>
-                    <span class="input-group-text cs-text bg-transparent ms-2 my-2 pe-1 rounded-0 border-0">
-                      <svg xmlns="http://w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                        class="bi bi-search" viewBox="0 0 16 16">
-                        <path
-                          d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
-                      </svg>
-                    </span>
-                    <input id="search" type="search" class="form-control cs-text rounded-0 border-0 my-2"
-                      placeholder="Search Colors" value="" />
-                    <span class="input-group-text d-none bg-transparent me-2 my-2 rounded-0 border-0" id="clearSearch">
-                      Clear
-                    </span>
+                <nav class="navbar navbar-expand-lg border px-2 bg-blur rounded-bottom-4">
+                  <div class="container-fluid">
+                    <a class="navbar-brand fw-medium fs-7" href="">
+                      <img src="https://01kartic.github.io/Assets/Images/ColorShader.png" alt="Logo" width="16"
+                        class="d-inline-block align-text-top me-2">
+                      Color Shader
+                    </a>
                   </div>
-                  <div id="gallery"></div>
-                </div>
-
-
-
-                <div class="tab-pane fade Main" id="colorPalettes">
-                  <!-- Color Palettes -->
-                  <div class="w-100" id="palettes">
-                  </div>
-                </div>
+                </nav>
               </div>
             </div>
-
-            <nav class="navbar navbar-expand-lg border px-2 bg-blur rounded-bottom-4">
-              <div class="container-fluid">
-                <a class="navbar-brand fw-medium fs-7" href="">
-                  <img src="https://01kartic.github.io/Assets/Images/ColorShader.png" alt="Logo" width="16"
-                    class="d-inline-block align-text-top me-2">
-                  Color Shader
-                </a>
-              </div>
-            </nav>
           </div>
         </div>
+      </div>
+    </div>
+    <div class="w-50 mx-auto py-5">
+      <!-- About -->
+      <div class="card bg-transparent cs-text border-dashed m-5 px-5 py-4 rounded-5 text-center">
+        <img src="https://01kartic.github.io/Assets/Images/ColorShader.png" alt="Color Shader Logo" width="64"
+          class="mx-auto my-4" />
+        <p class="mb-2 w-75 mx-auto fs-6">
+          Contribute <b>Colors</b> / <b>Palettes</b> in our Plugin.
+        </p>
+        <p>
+          Share your colors/palettes Collection with us & help us to improve the Plugin's colors/palettes Collection.
+        </p>
+        <a href="https://forms.gle/5t4S8EfsZpjooW6B7"
+          class="btn btn-primary fw-medium px-0 rounded-3 w-33 py-2 m-auto mb-3" target="_blank">Contribute Here</a>
+      </div>
+
+      <div class="mx-5 px-4">
+        <h4 class="mb-4 fw-bold">How to use ??</h4>
+        <p class="my-3">
+          Here, This plugin features four icons with distinct functions</b> :
+        </p>
+        <p class="ms-5 my-3 lh-3">👉&nbsp; The first icon, represented by a <span
+            class="w-100 figma-text text-decoration-none p-1 border-0 rounded-2 btn-CS"><svg width="16" height="16"
+              viewBox="0 0 24 24" fill="none" xmlns="http://w3.org/2000/svg">
+              <path d="M12 5V12M12 19V12M12 12H19M12 12H5" stroke="white" stroke-width="1.8" stroke-linecap="round" />
+            </svg></span>, is designated for <b>Add to Canvas</b>. By clicking on it, you can promptly add respective
+          colors
+          to your Figma canvas.</p>
+        <p class="ms-5 my-3">👉&nbsp; The second icon is represented by <span
+            class="w-100 figma-text text-decoration-none p-1 border-0 rounded-2 btn-CS"><svg width="16" height="16"
+              viewBox="0 0 24 24" fill="none" xmlns="http://w3.org/2000/svg">
+              <path
+                d="M12.6 4.27017L18.3942 7.61547C18.7655 7.82983 18.9942 8.22598 18.9942 8.6547V15.3453C18.9942 15.774 18.7655 16.1702 18.3942 16.3845L12.6 19.7298C12.2287 19.9442 11.7713 19.9442 11.4 19.7298L5.60577 16.3845C5.23449 16.1702 5.00577 15.774 5.00577 15.3453V8.6547C5.00577 8.22598 5.23449 7.82983 5.60577 7.61547L11.4 4.27017C11.7713 4.05581 12.2287 4.05581 12.6 4.27017Z"
+                stroke="white" stroke-width="1.6" />
+              <circle cx="12" cy="12" r="2" fill="white" />
+            </svg></span> and is utilized for <b>Make me style</b>. Upon clicking it, you witness a subtle magic of
+          <b>Color
+            Shader</b>, which generates a color style corresponding to the selected color.
+        </p>
+        <p class="ms-5 my-3">👉&nbsp; The third icon is represented by <span
+            class="w-100 figma-text text-decoration-none p-1 border-0 rounded-2 btn-CS"><img
+              src="https://01kartic.github.io/Assets/Images/ColorShader.png" alt="ColorShader Logo" height="16"></span>
+          and is utilized for <b>Create Shades</b>. Upon clicking it, you able to create shades of that perticular
+          color.
+        </p>
+        <p class="ms-5 my-3">👉&nbsp; Lastly, the fourth icon, symbolized by a <span
+            class="w-100 figma-text text-decoration-none p-1 border-0 rounded-2 btn-CS"><svg width="16" height="16"
+              viewBox="0 0 24 24" fill="none" xmlns="http://w3.org/2000/svg">
+              <rect x="9.00005" y="4.40001" width="8.6" height="12.6" rx="1.3" stroke="white" stroke-width="1.4" />
+              <path d="M6.30005 7.70001V9.4143V12.8429V17.7C6.30005 18.8046 7.19548 19.7 8.30005 19.7H11.1H14.3"
+                stroke="white" stroke-width="1.4" stroke-linecap="round" />
+            </svg></span>, serves the purpose of <b>Copy Hex Code</b>. As the name suggests, You know that what happen,
+          If
+          you click it.</p>
+        <p class="my-3">
+          If you want to learn more about this plugin, watch the full guide :
+        </p>
+        <p class="py-2 mb-3 text-center">
+          <a class="figma-text text-decoration-none px-3 py-2 border-0 rounded-pill btn-CS"
+            href="https://01kartic.github.io/Assets/ColorShader" target="_blank"><svg xmlns="http://w3.org/2000/svg"
+              width="24" height="24" fill="red" class="bi bi-youtube" viewBox="0 0 16 16">
+              <path
+                d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.01 2.01 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.01 2.01 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31 31 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.01 2.01 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A100 100 0 0 1 7.858 2zM6.4 5.209v4.818l4.157-2.408z" />
+            </svg> /ColorShader_Figma_Plugin_Guide</a>
+        </p>
+
+
+        <h4 class="mt-5 mb-4 fw-bold">About</h4>
+        <p class="mb-2">
+          👉&nbsp; Elevate your design process and speed with <b>Color Shader</b>, a Figma Plugin. Generate vibrant
+          color shades effortlessly.
+        </p>
+        <p class="mb-2">
+          👉&nbsp; It provides features such as copying hex codes, adding them to your canvas, or creating color styles
+          from your selected colors.
+        </p>
+        <p class="mb-2">
+          👉&nbsp; Additionally, a wide range of <b>Color Palettes</b> or <b>Color</b> collections is available, with
+          the same aforementioned features.
+        </p>
+        <p class="mb-2">
+          👉&nbsp; If you wish to contribute your <b>Color Palettes/Color</b> collections to our plugin, Link is given
+          above.
+        </p>
+        <p class="mb-2">
+          👉&nbsp; For assistance on how to use it, watch the video which link is also given above.
+        </p>
+        <p class="mb-2">
+          👉&nbsp; If you encounter any <b>bugs</b>, please comment on the link below.
+        </p>
+        <p class="py-3 text-center">
+          <a class="figma-text text-decoration-none px-3 py-2 border-0 rounded-pill btn-CS"
+            href="https://figma.com/community/plugin/1309939872279901716" target="_blank"><img
+              src="https://01kartic.github.io/Assets/Images/ColorShader.png" width="16" alt="Color Shader logo">
+            /ColorShader_Figma_Plugin</a>
+        </p>
+
+
+        <div class="text-center my-4 py-3">
+          <a class="figma-text text-decoration-none px-3 py-2 border-0 rounded-3 btn-CS me-3"
+            href="https://figma.com/@kartic" target="_blank">❤️&nbsp; More Like This</a>
+          <a class="figma-text text-decoration-none px-3 py-2 border-0 rounded-3 btn-CS" href="https://bento.me/kartic"
+            target="_blank">😊 Developer</a>
+        </div>
+      </div>
+
+      <div class="text-center my-5 py-5">
+        <h1 class="Honk">Thanks for visiting !!</h1>
       </div>
     </div>
   </div>
