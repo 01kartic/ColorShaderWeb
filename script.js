@@ -1,16 +1,12 @@
 document.addEventListener("DOMContentLoaded", function () {
   if (window.innerWidth < 1300) {
-    document.getElementById("desktop").style.display = "none";
-
-    const mobile = document.createElement("div");
-    mobile.classList.add("start-50", "top-50", "trasform50", "position-fixed");
-    mobile.innerHTML = `<div class="d-block text-center">
-      <p>Sorry, This site is only available on Desktop.</p>
-    </div>`;
-    document.body.appendChild(mobile);
+    const hero = document.getElementById("desktop");
+    hero.style.display = "none";
+    document.body.style.paddingTop = "3rem";
+    navbar.style.top = "3%";
   } else {
-    mobile.remove();
     document.getElementById("desktop").style.display = "block";
+    window.addEventListener("scroll", toggleNavbarVisibility);
   }
 });
 
@@ -54,12 +50,9 @@ function toggleNavbarVisibility() {
   if (window.scrollY > 450) {
     navbar.style.top = "3%"; // Show navbar
   } else {
-    navbar.style.top = "-10%"; // Hide navbar
+    navbar.style.top = "-15%"; // Hide navbar
   }
 }
-
-// Add scroll event listener to window
-window.addEventListener("scroll", toggleNavbarVisibility);
 
 // JS for Choosen Color
 document
