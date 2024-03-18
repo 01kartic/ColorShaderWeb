@@ -45,6 +45,8 @@ body {
   z-index: 1000;
   backdrop-filter: blur(256px);
   transition: top 0.3s ease-in-out;
+  width: 50%;
+  margin: 0;
 }
 
 .bg-blur {
@@ -501,18 +503,19 @@ a {
 
 .width-50 {
   width: 50%;
+  padding: 1.5rem auto;
 }
+
+
 
 
 @media (max-width: 1300px) {
   .width-50 {
     width: 100%;
-    padding: 1rem !important;
+    padding: 0.5rem auto;
   }
 
-  .navbar-w {
-    width: calc(100% - 2rem) !important;
-    margin-left: 1rem !important;
-    margin-right: 1rem !important;
+  #navBar {
+    width: 84%;
   }
 }
