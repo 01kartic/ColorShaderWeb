@@ -511,8 +511,8 @@ a {
   }
 
   .navbar-w {
-    width: calc(100% - 2rem);
-    margin-left: 1rem;
-    margin-right: 1rem;
+    width: calc(100% - 2rem) !important;
+    margin-left: 1rem !important;
+    margin-right: 1rem !important;
   }
 }
