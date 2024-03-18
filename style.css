@@ -506,5 +506,12 @@ a {
 @media (max-width: 1300px) {
   .width-50 {
     width: 100%;
+    padding: 1rem !important;
+  }
+
+  .navbar-w {
+    width: calc(100% - 2rem);
+    margin-left: 1rem;
+    margin-right: 1rem;
   }
 }
