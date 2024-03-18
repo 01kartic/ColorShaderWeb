@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
   if (window.innerWidth < 1300) {
     const hero = document.getElementById("desktop");
     hero.style.display = "none";
-    document.body.style.paddingTop = "3rem";
+    document.body.style.paddingTop = "4rem";
     navbar.style.top = "3%";
   } else {
     document.getElementById("desktop").style.display = "block";
